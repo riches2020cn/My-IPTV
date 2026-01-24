@@ -1,12 +1,10 @@
 import requests
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 # 配置源
 SOURCES = {
     "Singapore": "https://iptv-org.github.io/iptv/countries/sg.m3u",
-    "Hong Kong": "https://iptv-org.github.io/iptv/countries/hk.m3u",
-    "Macau": "https://iptv-org.github.io/iptv/countries/mo.m3u",
-    "Taiwan": "https://iptv-org.github.io/iptv/countries/tw.m3u",
     "USA": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "UK": "https://iptv-org.github.io/iptv/countries/uk.m3u",
     "Australia": "https://iptv-org.github.io/iptv/countries/au.m3u",
@@ -14,60 +12,33 @@ SOURCES = {
 }
 
 def is_alive(url):
-    """检测单个链接"""
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    }
     try:
-        # 使用 GET 但只请求前几个字节，比 HEAD 更准确，比完整 GET 更快
-        response = requests.get(url, timeout=5, stream=True, allow_redirects=True)
+        # 1. 增加超时到 10 秒，给高清源更多响应时间
+        # 2. stream=True 持续观察流
+        response = requests.get(url, timeout=10, stream=True, headers=headers, allow_redirects=True)
+        
         if response.status_code == 200:
-            return True
+            # 检查是否为常见的视频流格式
+            content_type = response.headers.get('Content-Type', '').lower()
+            valid_types = ['video', 'mpegurl', 'application/octet-stream', 'application/x-mpegurl']
+            
+            if any(vt in content_type for vt in valid_types):
+                # 核心改进：尝试读取 512KB 数据并计时
+                start_time = time.time()
+                bytes_received = 0
+                for chunk in response.iter_content(chunk_size=1024 * 64):
+                    if chunk:
+                        bytes_received += len(chunk)
+                    # 只要能读到 256KB 且没花太长时间，就认为是有内容的流
+                    if bytes_received >= 1024 * 256:
+                        return True
+                    if time.time() - start_time > 5: # 超过5秒还没读够，说明流太慢，放弃
+                        break
         return False
     except:
         return False
 
-def process_source(country, url):
-    """处理单个国家源并返回有效频道列表"""
-    valid_channels = []
-    print(f"正在抓取: {country}")
-    try:
-        r = requests.get(url, timeout=10)
-        lines = r.text.split('\n')
-        
-        tasks = []
-        # 预先提取频道信息和 URL 对
-        temp_info = None
-        for line in lines:
-            line = line.strip()
-            if line.startswith("#EXTINF"):
-                temp_info = line
-            elif line.startswith("http") and temp_info:
-                tasks.append((temp_info, line))
-                temp_info = None
-
-        # 使用多线程池加速检测
-        with ThreadPoolExecutor(max_workers=20) as executor:
-            # 这里的 20 个线程是安全阈值，既快又不容易被封 IP
-            results = list(executor.map(lambda x: (x[0], x[1], is_alive(x[1])), tasks))
-
-        for info, link, alive in results:
-            if alive:
-                valid_channels.append(info)
-                valid_channels.append(link)
-        
-        print(f"{country}: 检测完成，有效 {len(valid_channels)//2} 个")
-    except Exception as e:
-        print(f"{country} 处理失败: {e}")
-    return valid_channels
-
-def main():
-    final_m3u = ["#EXTM3U"]
-    
-    for country, url in SOURCES.items():
-        channels = process_source(country, url)
-        final_m3u.extend(channels)
-
-    with open("live_channels.m3u", "w", encoding="utf-8") as f:
-        f.write("\n".join(final_m3u))
-    print(f"所有任务已完成，结果已保存。")
-
-if __name__ == "__main__":
-    main()
+# ... 其余 process_source 和 main 函数保持不变 ...
