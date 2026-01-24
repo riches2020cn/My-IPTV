@@ -12,11 +12,20 @@ SOURCES = {
 OUTPUT_FILE = "IPTV_Channels.m3u"
 
 def is_alive(url):
-    """检测链接是否有效"""
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
+    }
     try:
-        # 使用 HEAD 请求节省流量，超时设为 3 秒
-        response = requests.head(url, timeout=3, allow_redirects=True)
-        return response.status_code == 200
+        # 改用 GET 并开启 stream=True
+        # timeout 设为 5 秒，防止被卡死
+        with requests.get(url, timeout=5, stream=True, headers=headers, allow_redirects=True) as response:
+            if response.status_code == 200:
+                # 检查前 1KB 数据，确保真的有数据流输出
+                for chunk in response.iter_content(chunk_size=1024):
+                    if chunk:
+                        return True
+                    break
+        return False
     except:
         return False
 
