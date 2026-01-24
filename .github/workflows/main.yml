@@ -28,6 +28,8 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
+          # 确保文件名与 check.py 里的 OUTPUT_FILE 完全一致
           git add IPTV_Channels.m3u
-          git commit -m "Update live channels (48h cycle)" || exit 0
+          # 即使没有变化也强制提交一次（可选），或者使用 || exit 0 容错
+          git commit -m "Automated Update: $(date)" || echo "No changes to commit"
           git push
