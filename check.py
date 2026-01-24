@@ -3,13 +3,14 @@ from concurrent.futures import ThreadPoolExecutor
 
 # 配置源
 SOURCES = {
-    "Australia": "https://iptv-org.github.io/iptv/countries/au.m3u",
-    "Canada": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "Singapore": "https://iptv-org.github.io/iptv/countries/sg.m3u",
     "Hong Kong": "https://iptv-org.github.io/iptv/countries/hk.m3u",
     "Macau": "https://iptv-org.github.io/iptv/countries/mo.m3u",
     "Taiwan": "https://iptv-org.github.io/iptv/countries/tw.m3u",
     "USA": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "UK": "https://iptv-org.github.io/iptv/countries/uk.m3u"
+    "UK": "https://iptv-org.github.io/iptv/countries/uk.m3u",
+    "Australia": "https://iptv-org.github.io/iptv/countries/au.m3u",
+    "Canada": "https://iptv-org.github.io/iptv/countries/ca.m3u"
 }
 
 def is_alive(url):
