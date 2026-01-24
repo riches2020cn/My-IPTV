@@ -9,7 +9,7 @@ SOURCES = {
     "Canada": "https://iptv-org.github.io/iptv/countries/ca.m3u"
 }
 
-OUTPUT_FILE = "live_channels.m3u"
+OUTPUT_FILE = "IPTV_Channels.m3u"
 
 def is_alive(url):
     """检测链接是否有效"""
