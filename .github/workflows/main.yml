@@ -1,0 +1,32 @@
+name: Update IPTV List
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # 每天北京时间早上6点自动运行
+  workflow_dispatch:      # 允许手动运行
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run check script
+        run: python check.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add live_channels.m3u
+          git commit -m "Update live channels" || exit 0
+          git push
