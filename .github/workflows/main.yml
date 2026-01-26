@@ -2,13 +2,17 @@ name: Update IPTV List
 
 on:
   schedule:
-    # 每隔 2 天，在北京时间早上 6 点运行 (UTC 时间 22:00)
-    - cron: '0 22 */2 * *' 
-  workflow_dispatch: # 保留手动运行按钮，方便你随时测试
+    # 修改为 22:17 运行，避开整点的高峰期，有助于减少 GitHub 的启动延迟
+    - cron: '17 22 */2 * *' 
+  workflow_dispatch: # 手动运行按钮
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    # 必须给予写权限，否则无法 commit 和 push
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -28,8 +32,15 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          # 确保文件名与 check.py 里的 OUTPUT_FILE 完全一致
-          git add IPTV_Channels.m3u
-          # 即使没有变化也强制提交一次（可选），或者使用 || exit 0 容错
-          git commit -m "Automated Update: $(date)" || echo "No changes to commit"
+          
+          # 更新一个心跳文件，确保仓库始终处于活跃状态，防止 cron 被停用
+          echo "Last heartbeat: $(date)" > keep_alive.txt
+          
+          # 添加 IPTV 列表和心跳文件
+          git add IPTV_Channels.m3u keep_alive.txt
+          
+          # 提交更改
+          # 即使 IPTV 列表没变，keep_alive.txt 也会变，从而保证每次都能成功提交
+          git commit -m "Automated Update & Heartbeat: $(date +'%Y-%m-%d %H:%M:%S')"
+          
           git push
