@@ -3,7 +3,7 @@ name: Update IPTV List
 on:
   schedule:
     # 修改为 22:17 运行，避开整点的高峰期，有助于减少 GitHub 的启动延迟
-    - cron: '17 22 */2 * *' 
+    - cron: '17 22 */5 * *' 
   workflow_dispatch: # 手动运行按钮
 
 jobs:
