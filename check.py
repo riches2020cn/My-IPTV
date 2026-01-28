@@ -1,4 +1,6 @@
-import requests
+import subprocess
+import re
+from concurrent.futures import ThreadPoolExecutor
 
 # 配置需要抓取的国家源列表
 SOURCES = {
@@ -9,58 +11,34 @@ SOURCES = {
     "Canada": "https://iptv-org.github.io/iptv/countries/ca.m3u"
 }
 
-OUTPUT_FILE = "IPTV_Channels.m3u"
-
-def is_alive(url):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
-    }
+def is_truly_alive(url):
+    """
+    使用 ffprobe 探测流媒体信息
+    """
+    cmd = [
+        'ffprobe', 
+        '-v', 'error', 
+        '-show_entries', 'stream=codec_type', 
+        '-of', 'default=noprint_wrappers=1:nokey=1', 
+        '-select_streams', 'v:0', # 只看视频流
+        '-timeout', '5000000',    # 微秒单位，5秒超时
+        url
+    ]
     try:
-        # 改用 GET 并开启 stream=True
-        # timeout 设为 5 秒，防止被卡死
-        with requests.get(url, timeout=5, stream=True, headers=headers, allow_redirects=True) as response:
-            if response.status_code == 200:
-                # 检查前 1KB 数据，确保真的有数据流输出
-                for chunk in response.iter_content(chunk_size=1024):
-                    if chunk:
-                        return True
-                    break
+        # 执行命令，捕获输出
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=7)
+        # 如果输出了 'video'，说明流是可以解码的
+        if "video" in result.stdout:
+            return True
+    except Exception:
         return False
-    except:
-        return False
+    return False
 
-def main():
-    merged_list = ["#EXTM3U"]
-    total_valid = 0
+def check_channel(info, url):
+    # 先用 requests 快速初筛，节省 ffprobe 的开销
+    print(f"正在深度检测: {url[:50]}...")
+    if is_truly_alive(url):
+        return f"{info}\n{url}"
+    return None
 
-    for country, url in SOURCES.items():
-        print(f"--- 正在处理: {country} ---")
-        try:
-            r = requests.get(url, timeout=10)
-            lines = r.text.split('\n')
-            
-            current_info = None
-            for line in lines:
-                line = line.strip()
-                if line.startswith("#EXTINF"):
-                    current_info = line
-                elif line.startswith("http"):
-                    # 执行检测
-                    if is_alive(line):
-                        if current_info:
-                            merged_list.append(current_info)
-                        merged_list.append(line)
-                        total_valid += 1
-                        print(f"[OK] {line[:50]}...")
-                    current_info = None
-        except Exception as e:
-            print(f"处理 {country} 时出错: {e}")
-
-    # 写入文件
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(merged_list))
-    
-    print(f"\n全部完成！合并后共有 {total_valid} 个有效频道。")
-
-if __name__ == "__main__":
-    main()
+# ... main 函数逻辑（参考上一轮，将 check_url 替换为 check_channel） ...
