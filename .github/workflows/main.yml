@@ -3,7 +3,7 @@ name: Update IPTV List
 on:
   schedule:
     # 每 5 天运行一次，22:17 运行
-    - cron: '17 22 */5 * *' 
+    - cron: '17 22 */2 * *' 
   workflow_dispatch: # 手动运行按钮
 
 jobs:
