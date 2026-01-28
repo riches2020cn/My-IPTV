@@ -1,9 +1,8 @@
 import requests
-import subprocess
-import concurrent.futures
 import re
+from concurrent.futures import ThreadPoolExecutor
 
-# 配置需要抓取的国家源列表 (iptv-org 的源)
+# 配置需要抓取的国家源
 SOURCES = {
     "Singapore": "https://iptv-org.github.io/iptv/countries/sg.m3u",
     "USA": "https://iptv-org.github.io/iptv/countries/us.m3u",
@@ -14,76 +13,64 @@ SOURCES = {
 
 OUTPUT_FILE = "IPTV_Channels.m3u"
 
-def check_with_ffprobe(url):
+def is_alive(channel):
     """
-    使用 ffprobe 检测视频流是否真实有效
+    保留你的核心逻辑：检查前 1KB 数据，确保有流输出
     """
-    # -v error: 只显示错误
-    # -show_entries: 只看视频流信息
-    # -timeout: 5000000 微秒 (即 5 秒)
-    cmd = [
-        'ffprobe', 
-        '-v', 'error', 
-        '-show_entries', 'stream=codec_type', 
-        '-of', 'default=noprint_wrappers=1:nokey=1', 
-        '-timeout', '5000000', 
-        url
-    ]
+    info, url = channel
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) VLC/3.0.18'
+    }
     try:
-        # 如果 ffprobe 成功获取到视频流信息，说明频道可以打开
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
-        if "video" in result.stdout:
-            return True
+        # stream=True 配合 timeout 防止卡死
+        with requests.get(url, timeout=5, stream=True, headers=headers, allow_redirects=True) as response:
+            if response.status_code == 200:
+                # 检查是否有实际数据流
+                for chunk in response.iter_content(chunk_size=1024):
+                    if chunk:
+                        return f"{info}\n{url}"
+                    break
     except:
         pass
-    return False
-
-def verify_channel(channel):
-    info, url = channel
-    # 1. 快速初筛 (HTTP 状态码)
-    try:
-        r = requests.head(url, timeout=3, allow_redirects=True)
-        if r.status_code >= 400:
-            return None
-    except:
-        return None
-
-    # 2. 深度探测 (是否真的有视频数据)
-    if check_with_ffprobe(url):
-        print(f"[SUCCESS] {url[:50]}")
-        return f"{info}\n{url}"
-    else:
-        print(f"[FAILED] {url[:50]}")
-        return None
+    return None
 
 def main():
-    tasks = []
-    # 抓取源列表
+    all_to_check = []
+    
+    # 1. 汇总所有国家的频道
     for country, url in SOURCES.items():
+        print(f"正在读取源: {country}")
         try:
             r = requests.get(url, timeout=10)
-            # 提取 #EXTINF 和对应的 URL
+            # 使用正则精准匹配 #EXTINF 和 紧随其后的 URL
+            # 这比循环逐行判断要稳得多，能自动过滤空白行
             found = re.findall(r'(#EXTINF:.*)\n(http.*)', r.text)
-            tasks.extend(found)
-        except:
-            continue
+            all_to_check.extend(found)
+        except Exception as e:
+            print(f"读取 {country} 失败: {e}")
 
-    print(f"开始深度检测 {len(tasks)} 个频道...")
+    print(f"共收集到 {len(all_to_check)} 个频道，开始并发检测...")
 
-    results = []
-    # 使用线程池并发执行，提高速度
-    # GitHub Actions 核心数有限，建议 max_workers 设在 10-20 左右
-    with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
-        results = list(executor.map(verify_channel, tasks))
+    # 2. 引入多线程：将原本需要 1 小时的任务缩短到几分钟
+    valid_channels = ["#EXTM3U"]
+    # max_workers=20 是 GitHub 环境下的黄金比例
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        results = list(executor.map(is_alive, all_to_check))
+    
+    # 3. 汇总有效结果并去重
+    seen_urls = set()
+    for res in results:
+        if res:
+            url = res.split('\n')[1]
+            if url not in seen_urls: # 简单去重
+                valid_channels.append(res)
+                seen_urls.add(url)
 
-    # 汇总有效频道
-    final_m3u = ["#EXTM3U"]
-    for item in results:
-        if item:
-            final_m3u.append(item)
-
+    # 4. 写入文件
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(final_m3u))
+        f.write("\n".join(valid_channels))
+    
+    print(f"全部完成！合并后共有 {len(valid_channels) - 1} 个有效频道。")
 
 if __name__ == "__main__":
     main()
