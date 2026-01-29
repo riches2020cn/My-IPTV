@@ -1,0 +1,36 @@
+name: IPTV_Auto_Update
+
+on:
+  schedule:
+    # 北京时间次日 06:17 运行
+    - cron: '17 22 */2 * *'
+  workflow_dispatch: 
+
+jobs:
+  run_sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Run Python Script
+        run: python merge_list.py
+
+      - name: Push to Repo
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
+          # 确保同时添加 M3U 和 keep_alive 文件
+          git add IPTV_Channels.m3u keep_alive.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update & Keep Alive $(date)" && git push)
