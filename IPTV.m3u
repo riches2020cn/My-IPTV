@@ -125,7 +125,7 @@ http://192.168.2.1:7070/udp/228.1.1.210:8160
 http://192.168.2.1:7070/udp/228.1.1.18:8052
 #EXTINF:-1 tvg-logo="hlj.png" tvg-name="黑龙江卫视",黑龙江卫视[高清]
 http://192.168.2.1:7070/udp/228.1.1.35:8016
-#EXTINF:-1 tvg-logo="hebei.png" tvg-name="河北卫视",河北卫视[高清]
+#EXTINF:-1 tvg-logo="hb.png" tvg-name="河北卫视",河北卫视[高清]
 http://192.168.2.1:7070/udp/228.1.1.187:8072
 #EXTINF:-1 tvg-logo="henan.png" tvg-name="河南卫视",河南卫视[高清]
 http://192.168.2.1:7070/udp/228.1.1.236:8184
