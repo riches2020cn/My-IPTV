@@ -2,8 +2,8 @@ name: IPTV_Auto_Update
 
 on:
   schedule:
-    # 每隔2天，北京时间20点运行
-    - cron: '0 12 */2 * *'
+    # 每隔2天，北京时间6点运行
+    - cron: '0 22 */2 * *'
   workflow_dispatch: 
 
 jobs:
