@@ -658,6 +658,8 @@ https://live.field59.com/wrde/wrde1/playlist.m3u8
 https://aegis-cloudfront-1.tubi.video/1e764712-0649-4946-bd7e-f1bbba3be6fa/playlist.m3u8
 #EXTINF:-1 tvg-id="CollierTV.us@SD" tvg-logo="https://i.imgur.com/dkpTHI9.png" group-title="Legislative",Collier Television CTV (Naples FL) (720p)
 https://reflect-collier-countyboc.cablecast.tv/live-4/live/stream-1/live.m3u8
+#EXTINF:-1 tvg-id="ComedyCentral.us@East" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/960px-Comedy_Central_2018.svg.png" group-title="Comedy",Comedy Central (1080p)
+http://23.237.104.106:8080/USA_COMEDY_CENTRAL/index.m3u8
 #EXTINF:-1 tvg-id="ComedyCentralenEspanol.us@SD" tvg-logo="https://i.imgur.com/6xTD3G8.png" group-title="Comedy",Comedy Central en español
 https://jmp2.uk/plu-5cf96dad1652631e36d43320.m3u8
 #EXTINF:-1 tvg-id="ComedyCentralPlutoTV.us@US" tvg-logo="https://i.imgur.com/9y6TtjF.png" group-title="Comedy",Comedy Central Pluto TV
@@ -1038,7 +1040,7 @@ https://dil9xdvretp0f.cloudfront.net/index.m3u8
 https://jk3lz82elw79-hls-live.5centscdn.com/harPalGeo/955ad3298db330b5ee880c2c9e6f23a0.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="HarvestUSA.in@SD" tvg-logo="https://www.lyngsat.com/logo/tv/hh/harvest_tv_in_usa.png" group-title="Religious",Harvest USA (576p)
 https://7mbd4ogkr3gx-hls-live.wmncdn.net/harvestusa/d57ffba6564caea2fee3f4085f19a098.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="HauntTV.us@SD" tvg-logo="https://yt3.googleusercontent.com/ytc/AIdro_kFORSMlXKT0V9fBpkp5TS7VbpwlNC6XbfZxrSSWUt1UA=s512-c-k-c0x00ffffff-no-rj" group-title="Entertainment",Haunt TV (1080p)
+#EXTINF:-1 tvg-id="HauntTV.us@SD" tvg-logo="https://images.pluto.tv/channels/63934c218ef524000757b122/colorLogoPNG.png" group-title="Entertainment",Haunt TV (1080p)
 https://amg01446-blueantmediacan-haunttvaussam-samsungau-vcnai.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaussam-samsungau/playlist.m3u8
 #EXTINF:-1 tvg-id="Heartland.us@Web" tvg-logo="https://i.imgur.com/djCq2Z5.png" group-title="Entertainment",Heartland
 https://jmp2.uk/plu-61f07513227feb00073ee6bc.m3u8
@@ -1852,7 +1854,7 @@ https://jmp2.uk/plu-5b64a245a202b3337f09e51d.m3u8
 https://jmp2.uk/plu-6036e7c385749f00075dbd3b.m3u8
 #EXTINF:-1 tvg-id="PlutoTVHistory.us@US" tvg-logo="https://i.imgur.com/XkQD5kM.png" group-title="Documentary",Pluto TV History
 https://jmp2.uk/plu-5a4d35dfa5c02e717a234f86.m3u8
-#EXTINF:-1 tvg-id="PlutoTVHorror.us@US" tvg-logo="https://i.imgur.com/k6qttca.png" group-title="Movies",Pluto TV Horror
+#EXTINF:-1 tvg-id="PlutoTVHorror.us@US" tvg-logo="https://images.pluto.tv/channels/569546031a619b8f07ce6e25/colorLogoPNG.png" group-title="Movies",Pluto TV Horror
 https://jmp2.uk/plu-569546031a619b8f07ce6e25.m3u8
 #EXTINF:-1 tvg-id="PlutoTVLives.us@US" tvg-logo="https://i.imgur.com/laupYwG.png" group-title="Series",Pluto TV Lives
 https://jmp2.uk/plu-5d8beeb39b5d5d5f8c672530.m3u8
@@ -2047,8 +2049,8 @@ https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_050/playlist.m3u8
 https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_048/playlist.m3u8
 #EXTINF:-1 tvg-id="SGTV.us@SD" tvg-logo="https://i.imgur.com/rVyWa2A.png" group-title="Legislative",SGTV (Seminole County FL) (1080p)
 https://live.seminolecountyfl.gov/live-2/live/stream-1/live.m3u8
-#EXTINF:-1 tvg-id="Shabakeh7.us@SD" tvg-logo="https://i.imgur.com/oHmh5Jb.png" group-title="Entertainment",Shabakeh 7 (576p)
-https://t.northtelecom.org/Shabakeh.m3u8
+#EXTINF:-1 tvg-id="Shabakeh7.us@SD" tvg-logo="https://i.imgur.com/oHmh5Jb.png" group-title="Entertainment",Shabakeh 7
+https://sh7hls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="ShalomAmerica.us@SD" tvg-logo="https://i.imgur.com/qUjsV79.png" group-title="Religious",Shalom TV (720p) [Not 24/7]
 https://livestreamcdn.net:444/ShalomTV/ShalomTV/playlist.m3u8
 #EXTINF:-1 tvg-id="ShauntheSheepFriends.uk@US" tvg-logo="https://i.imgur.com/jQgnFcQ.png" group-title="Animation;Kids",Shaun the Sheep & Friends (1080p)
@@ -2460,7 +2462,7 @@ https://stream.swagit.com/live-edge/hastingsonhudsonny/smil:std-4x3-1-a/playlist
 #EXTINF:-1 tvg-id="VisionGlobalTV.us@SD" tvg-logo="https://i.imgur.com/3FaNbYD.png" group-title="General",Vision Global TV (720p) [Geo-blocked]
 https://vdopanel.jlahozconsulting.com:3407/hybrid/play.m3u8
 #EXTINF:-1 tvg-id="VoATVPersian.us@SD" tvg-logo="https://i.imgur.com/TmqComb.png" group-title="News",VOA Persian
-https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8
+https://voaphls.wns.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="VoATV.us@SD" tvg-logo="https://i.imgur.com/rtRnlqN.png" group-title="News",VOA TV Africa (1080p)
 https://voa-ingest.akamaized.net/hls/live/2033874/tvmc06/playlist.m3u8
 #EXTINF:-1 tvg-id="VSiN.us@SD" tvg-logo="https://i.imgur.com/C4wIRxg.png" group-title="Undefined",VSiN (720p)
@@ -2525,6 +2527,8 @@ https://content.uplynk.com/channel/8975f81e6efd4e609873c3e8e25c7756.m3u8
 https://streaming-live-fcdn.api.prd.univisionnow.com/wfut/wfut.isml/hls/wfut.m3u8
 #EXTINF:-1 tvg-id="WFXTDT2.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/ION_Mystery_logo.svg/960px-ION_Mystery_logo.svg.png" group-title="Undefined",WFXT-DT2 (1080p)
 https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-ionmystery-tablo/playlist.m3u8
+#EXTINF:-1 tvg-id="WGALDT3.us@SD" tvg-logo="https://i.imgur.com/KQSKIdZ.jpeg" group-title="News",WGAL-DT3 (1080p) [Geo-blocked]
+https://lowa8026-cmyk.github.io/iptv/WGAL-DT3/index.m3u8
 #EXTINF:-1 tvg-id="WGGSDT1.us@SD" tvg-logo="https://i.imgur.com/Btw83JA.png" group-title="Undefined",WGGS-DT1 (720p)
 https://cdn-unified-hls.streamspot.com/ingest1/c7956aac88/playlist.m3u8?origin=1
 #EXTINF:-1 tvg-id="WGGSDT2.us@SD" tvg-logo="https://i.imgur.com/UfN6aAi.png" group-title="News",WGGS-DT2 (720p)
@@ -3022,7 +3026,7 @@ https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_030/Stream/playlist.m3u
 https://moonbug-rokuus.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="More4.uk@HD" tvg-logo="https://i.imgur.com/cx5YcAU.png" group-title="Entertainment",More4 HD [Geo-Blocked]
 https://viamotionhsi.netplus.ch/live/eds/more4/browser-dash/more4.mpd
-#EXTINF:-1 tvg-id="MostHaunted.us@UK" tvg-logo="https://i.imgur.com/hTDvXxZ.png" group-title="Series",Most Haunted
+#EXTINF:-1 tvg-id="MostHaunted.us@UK" tvg-logo="https://images.pluto.tv/channels/66d722d31878f200081c2c64/colorLogoPNG.png" group-title="Series",Most Haunted
 https://jmp2.uk/plu-6081648340382e0007f73d45.m3u8
 #EXTINF:-1 tvg-id="MovieSphere.us@UK" tvg-logo="https://i.imgur.com/h1ejU90.png" group-title="Movies",MovieSphere UK (1080p)
 https://moviesphereuk-samsunguk.amagi.tv/playlist.m3u8
@@ -3096,7 +3100,7 @@ https://jmp2.uk/plu-5ddf91149880d60009d35d27.m3u8
 https://jmp2.uk/plu-5ddf930548ff9b00090d5686.m3u8
 #EXTINF:-1 tvg-id="PlutoTVHistory.us@UK" tvg-logo="https://i.imgur.com/XkQD5kM.png" group-title="Documentary",Pluto TV History
 https://jmp2.uk/plu-5d4af1803e7983b391d73b13.m3u8
-#EXTINF:-1 tvg-id="PlutoTVHorror.us@UK" tvg-logo="https://i.imgur.com/k6qttca.png" group-title="Movies",Pluto TV Horror
+#EXTINF:-1 tvg-id="PlutoTVHorror.us@UK" tvg-logo="https://images.pluto.tv/channels/569546031a619b8f07ce6e25/colorLogoPNG.png" group-title="Movies",Pluto TV Horror
 https://jmp2.uk/plu-612cda102f5f18000705e0bf.m3u8
 #EXTINF:-1 tvg-id="PlutoTVKids.us@UK" tvg-logo="https://i.imgur.com/yVSLWy5.png" group-title="Kids",Pluto TV Kids
 https://jmp2.uk/plu-5ad8d54be738977e2c310940.m3u8
@@ -3611,7 +3615,7 @@ http://stream.pardesitv.online/pardesi/tracks-v1a1/mono.m3u8
 https://iptv.tapesh.tv/tapesh/playlist.m3u8
 #EXTINF:-1 tvg-id="PBSTravel.us@SD" tvg-logo="https://i.imgur.com/A6GXhta.png" group-title="Lifestyle",PBS Travel (1080p)
 https://d3hqevbyoxtkoi.cloudfront.net/PBS_Travel.m3u8
-#EXTINF:-1 tvg-id="PlutoTVHorror.us@CA" tvg-logo="https://i.imgur.com/k6qttca.png" group-title="Movies",Pluto TV Horror
+#EXTINF:-1 tvg-id="PlutoTVHorror.us@CA" tvg-logo="https://images.pluto.tv/channels/569546031a619b8f07ce6e25/colorLogoPNG.png" group-title="Movies",Pluto TV Horror
 https://jmp2.uk/plu-62ea3f8a38acc80007072d26.m3u8
 #EXTINF:-1 tvg-id="PrimeAsiaTV.ca@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Prime_Asia_HD.png" group-title="Undefined",Prime Asia TV (1080p)
 http://primeasia.selfip.net/Samsung/index.m3u8
