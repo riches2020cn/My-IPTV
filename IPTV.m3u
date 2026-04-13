@@ -25,7 +25,7 @@ http://192.168.2.1:7070/udp/228.1.1.38:2000
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/淘电影.png" tvg-name="该频道节目单尚无",淘电影[高清]
 http://192.168.2.1:7070/udp/228.1.1.124:8001
 # http://192.168.2.1:7070/udp/228.1.1.121:8002
-# #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/CBN每日影院.png.png" tvg-name="该频道节目单尚无",每日影院[高清]
+# #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/CBN每日影院.png" tvg-name="该频道节目单尚无",每日影院[高清]
 # http://192.168.2.1:7070/udp/228.1.1.120:8002
 # #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/重温经典.png" tvg-name="该频道节目单尚无",重温经典[高清]
 #http://192.168.2.1:7070/udp/228.1.1.237:8002
@@ -209,7 +209,7 @@ http://192.168.2.1:7070/udp/228.1.1.219:8002
 # http://192.168.2.1:7070/udp/228.1.1.230:8002
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/中国交通.png" tvg-name="中国交通频道",中国交通[高清]
 http://192.168.2.1:7070/udp/228.1.1.222:8002
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/IPTV少儿动画.png.png" tvg-name="少儿动画",少儿动画[高清]
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/IPTV少儿动画.png" tvg-name="动画",动画[高清]
 http://192.168.2.1:7070/udp/228.1.1.83:9000
 #EXTINF:-1 tvg-logo=https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/华数少儿动漫.png" tvg-name="少儿动漫",少儿动漫[高清]
 http://192.168.2.1:7070/udp/228.1.1.161:4120
@@ -249,12 +249,12 @@ http://192.168.2.1:7070/udp/228.1.1.209:4220
 #http://192.168.2.1:7070/udp/228.1.1.226:8002
 # #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/魅力足球.png" tvg-name="该频道节目单尚无",魅力足球[高清]
 # http://192.168.2.1:7070/udp/228.1.1.233:8002
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/茶频道.png" tvg-name="茶频道",茶频道[高清]
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/中国天气.png" tvg-name="中国天气",中国天气[高清]
 http://192.168.2.1:7070/udp/228.1.1.145:8002
 # #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/体育赛事.png" tvg-name="该频道节目单尚无",体育赛事[高清]
 # #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/淘精彩.png" tvg-name="该频道节目单尚无",淘精彩[高清]
 # http://192.168.2.1:7070/udp/228.1.1.202:8002
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/四海釣魚.png.png" tvg-name="快乐垂钓",快乐垂钓[高清]
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/四海钓鱼.png" tvg-name="四海钓鱼",四海钓鱼[高清]
 http://192.168.2.1:7070/udp/228.1.1.144:8002
 # #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/生活时尚.png" tvg-name="该频道节目单尚无",生活时尚[高清]
 # http://192.168.2.1:7070/udp/228.1.1.228:8002
@@ -274,7 +274,7 @@ http://192.168.2.1:7070/udp/228.1.1.164:4120
 http://192.168.2.1:7070/udp/228.1.1.162:4120
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/戏曲.png" tvg-name="该频道节目单尚无",戏曲[高清]
 http://192.168.2.1:7070/udp/228.1.1.159:4120
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/早教.png" tvg-name="该频道节目单尚无",早教[高清]
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/早期教育.png" tvg-name="该频道节目单尚无",早教[高清]
 http://192.168.2.1:7070/udp/228.1.1.160:4120
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/武术.png" tvg-name="该频道节目单尚无",武术[高清]
 http://192.168.2.1:7070/udp/228.1.1.168:4120
