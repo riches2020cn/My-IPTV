@@ -27,8 +27,8 @@ http://192.168.2.1:7070/udp/228.1.1.124:8001
 # http://192.168.2.1:7070/udp/228.1.1.121:8002
 # #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/CBN每日影院.png.png" tvg-name="该频道节目单尚无",每日影院[高清]
 # http://192.168.2.1:7070/udp/228.1.1.120:8002
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/重温经典.png" tvg-name="该频道节目单尚无",重温经典[高清]
-http://192.168.2.1:7070/udp/228.1.1.237:8002
+# #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/重温经典.png" tvg-name="该频道节目单尚无",重温经典[高清]
+#http://192.168.2.1:7070/udp/228.1.1.237:8002
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/CHC动作电影.png" tvg-name="CHC动作电影",CHC动作电影[高清]
 http://192.168.2.1:7070/udp/228.1.1.238:7000
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/星影Y.png" tvg-name="该频道节目单尚无",星影[高清]
