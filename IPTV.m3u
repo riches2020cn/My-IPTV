@@ -207,8 +207,8 @@ http://192.168.2.1:7070/udp/228.1.1.139:8001
 http://192.168.2.1:7070/udp/228.1.1.219:8002
 # #EXTINF:-1 tvg-logo="法治天地" tvg-name="该频道节目单尚无",法治天地[高清]
 # http://192.168.2.1:7070/udp/228.1.1.230:8002
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/中国交通.png" tvg-name="中国交通频道",中国交通[高清]
-http://192.168.2.1:7070/udp/228.1.1.222:8002
+# #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/中国交通.png" tvg-name="中国交通频道",中国交通[高清]
+#http://192.168.2.1:7070/udp/228.1.1.222:8002
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/IPTV少儿动画.png" tvg-name="动画",动画[高清]
 http://192.168.2.1:7070/udp/228.1.1.83:9000
 #EXTINF:-1 tvg-logo=https://raw.githubusercontent.com/riches2020cn/TV-Logo/main/LOGO/华数少儿动漫.png" tvg-name="少儿动漫",少儿动漫[高清]
