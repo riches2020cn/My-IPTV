@@ -23,6 +23,6 @@ IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
 
 ## 📖 IPTV_EPG 节目表
 
-- 此为宽带 IPTV 的节目表，来自 EPG 节目表网站：https://epg.51zmt.top:8001/，每2天早上7点自动生成
+- 此为宽带 IPTV 的节目表，每2天早上7点自动生成，来自 EPG 节目表网站：https://epg.51zmt.top:8001/
 
 ---
