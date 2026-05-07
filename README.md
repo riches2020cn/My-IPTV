@@ -12,7 +12,7 @@
 ## 📖 IPTV_国外节目源
 
 IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
-- 每两天自动生成5个国家地区混合成 “IPTV_Channels.m3u” 节目表：
+- 每隔2天自动生成5个国家地区混合成 “IPTV_Channels.m3u” 节目表：
 - 新加坡: https://iptv-org.github.io/iptv/countries/sg.m3u
 - 美国: https://iptv-org.github.io/iptv/countries/us.m3u
 - 英国: https://iptv-org.github.io/iptv/countries/uk.m3u
@@ -23,6 +23,6 @@ IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
 
 ## 📖 IPTV_EPG 节目表
 
-- 此为宽带 IPTV 的节目表，每2天早上7点自动生成，来自 EPG 节目表网站：https://epg.51zmt.top:8001/
+- 此为宽带 IPTV 的节目表，每隔2天早上7点自动生成，来自 EPG 节目表网站：https://epg.51zmt.top:8001/
 
 ---
