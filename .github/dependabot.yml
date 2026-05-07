@@ -1,0 +1,11 @@
+# 监控并及时升级脚本中的“actions”版本，提高编译OpenWrt的成功率
+# 监控脚本中的官方“actions”：uses: actions/checkout@v...，用来把脚本中的代码拉取到 Github 服务器上进行编译，官方地址：https://github.com/actions/checkout
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"                    # 监控整个仓库的所有 workflow
+    schedule:
+      interval: "weekly"           # 每周检查一次，或改成"monthly"每月检查一次
+      timezone: "Asia/Shanghai"
+    open-pull-requests-limit: 10       # 最多同时打开10个PR
