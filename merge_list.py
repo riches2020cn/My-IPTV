@@ -9,7 +9,7 @@ SOURCES = {
     "Australia": "https://iptv-org.github.io/iptv/countries/au.m3u",
     "Canada": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "New Zealand": "https://iptv-org.github.io/iptv/countries/nz.m3u",
-    "Ireland": "https://iptv-org.github.io/iptv/countries/ie.m3u"    
+    "Ireland": "https://iptv-org.github.io/iptv/countries/ie.m3u"
 }
 
 OUTPUT_FILE = "IPTV_Channels.m3u"
