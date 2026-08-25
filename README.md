@@ -11,7 +11,7 @@
 
 ## 📖 IPTV_国外节目源
 
-IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
+IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv，若要继续添加其他国家节目源，修改“merge_list.py”文件即可
 - 每隔2天自动生成5个国家地区混合成 “IPTV_Channels.m3u” 节目表：
 - 新加坡: https://iptv-org.github.io/iptv/countries/sg.m3u
 - 美国: https://iptv-org.github.io/iptv/countries/us.m3u
@@ -20,7 +20,7 @@ IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
 - 加拿大: https://iptv-org.github.io/iptv/countries/ca.m3u
 - 新西兰: https://iptv-org.github.io/iptv/countries/nz.m3u
 - 爱尔兰: https://iptv-org.github.io/iptv/countries/ie.m3u
-若要继续添加其他国家节目源，修改“merge_list.py”文件即可
+
 ---
 
 ## 📖 IPTV_EPG 节目表
