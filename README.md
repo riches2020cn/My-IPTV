@@ -18,7 +18,9 @@ IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
 - 英国: https://iptv-org.github.io/iptv/countries/uk.m3u
 - 澳大利亚: https://iptv-org.github.io/iptv/countries/au.m3u
 - 加拿大: https://iptv-org.github.io/iptv/countries/ca.m3u
-
+- 新西兰: https://iptv-org.github.io/iptv/countries/nz.m3u
+- 爱尔兰: https://iptv-org.github.io/iptv/countries/ie.m3u
+- 若要继续添加其他国家节目源，修改“merge_list.py”文件即可
 ---
 
 ## 📖 IPTV_EPG 节目表
