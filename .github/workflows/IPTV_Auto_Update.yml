@@ -1,9 +1,9 @@
 name: IPTV_Auto_Update
 
 on:
-  schedule:
+  #schedule:
     # 每隔2天，北京时间 5:07运行
-    - cron: '07 21 */2 * *'
+    #- cron: '07 21 */2 * *'
   workflow_dispatch: 
 
 jobs:
