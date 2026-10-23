@@ -3,15 +3,15 @@
 ---
 
 ## 📖 IPTV_国内节目源
-
+脚本：Update IPTV_EPG.yml
 - IPTV.m3u 来源于北京IPTV
 - IPTV Logos 电视台台标用来匹配北京IPTV
 
 ---
 
 ## 📖 IPTV_国外节目源
-
-IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
+脚本：IPTV_Auto_Update.yml
+- IPTV_Channels.m3u 来源于：https://github.com/iptv-org/iptv
 - 每隔2天自动生成7个英语国家混合成 “IPTV_Channels.m3u” 节目表：
 - 新加坡: https://iptv-org.github.io/iptv/countries/sg.m3u
 - 美国: https://iptv-org.github.io/iptv/countries/us.m3u
