@@ -1,9 +1,9 @@
 name: Update IPTV_EPG
 
 on:
-  schedule:
+  #schedule:
     # 每天北京时间 07:17（UTC 23:17）更新，作者在北京时间 7点10分 自动更新
-    - cron: '17 23 * * *'
+    #- cron: '17 23 * * *'
   workflow_dispatch:
 
 jobs:
